@@ -9,18 +9,27 @@ import Foundation
 
 // MARK: - MovieResponse
 struct MovieResponse: Codable {
-    let docs: [Doc]
-    let total, limit, offset, page: Int
-    let pages: Int
+    var docs: [Doc]?
+    var total, limit, offset, page: Int?
+    var pages: Int?
+    
+    init(docs: [Doc]? = nil, total: Int? = nil, limit: Int? = nil, offset: Int? = nil, page: Int? = nil, pages: Int? = nil) {
+        self.docs = docs
+        self.total = total
+        self.limit = limit
+        self.offset = offset
+        self.page = page
+        self.pages = pages
+    }
 }
 
 // MARK: - Doc
 struct Doc: Codable {
-    let id, name: String
-    let runtimeInMinutes, budgetInMillions: Int
-    let boxOfficeRevenueInMillions: Double
-    let academyAwardNominations, academyAwardWins: Int
-    let rottenTomatoesScore: Double
+    var id, name: String
+    var runtimeInMinutes, budgetInMillions: Int
+    var boxOfficeRevenueInMillions: Double
+    var academyAwardNominations, academyAwardWins: Int
+    var rottenTomatoesScore: Double
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
