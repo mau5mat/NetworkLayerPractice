@@ -66,7 +66,9 @@ struct NetworkService {
         urlRequest.httpMethod = endpoint.methodType
         urlRequest.addValue(endpoint.bearerToken, forHTTPHeaderField: "Authorization")
         
-        return URLSession.shared.dataTaskPublisher(for: urlRequest)
+        let session = URLSession(configuration: .default)
+        
+        return session.dataTaskPublisher(for: urlRequest)
             .map { $0.data }
             .decode(type: T.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()

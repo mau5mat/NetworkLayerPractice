@@ -24,9 +24,9 @@ class ViewController: UIViewController {
         // MARK: We then recieve a movieResponse value, and we set what we need from the data to the movies property on our VC.
         cancellable = presenter.getMoviesReactively().sink(receiveValue: { [weak self] movieResponse in
             self?.movies = movieResponse.docs
+            print(self?.movies?.count)
         })
         
-        print(movies?.count)
     }
 
     
