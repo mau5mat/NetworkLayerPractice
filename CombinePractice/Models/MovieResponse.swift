@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - MovieResponse
 struct MovieResponse: Codable {
-    var docs: [Doc]?
+    var docs: [Doc]
     var total, limit, offset, page: Int?
     var pages: Int?
     

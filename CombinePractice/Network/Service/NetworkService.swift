@@ -48,7 +48,7 @@ struct NetworkService {
         dataTask.resume()
     }
     
-    // MARK: First, we get rid of the Completion closure and adopt a return type of AnyPublisher<> instead.
+    // MARK: First, we get rid of the Completion closure and adopt a return type of AnyPublisher<T, Error> instead.
     // MARK: We then adopt the same paradigm in our Presenter call. @ViewPresenter
     // MARK: We then make a call using URLSession's dataTaskPublisher with a supplied Endpoint
     // MARK: We Map the response data, and then feed that in to be decoded.  We then need to call .eraseToAnyPublisher() in order to satisfy the return type of the functon.

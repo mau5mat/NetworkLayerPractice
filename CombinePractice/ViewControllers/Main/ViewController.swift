@@ -8,8 +8,15 @@
 import UIKit
 import Combine
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, Storyboarded {
+    
+    @IBAction func didTapBookButton(_ sender: UIButton) {
+        // Use coordinator to navigate to BookViewController onTap
+        self.mainCoordinator?.goToBookVC()
+        
+    }
 
+    weak var mainCoordinator: MainCoordinator?
     private let presenter = ViewPresenter()
     private var movies: [Doc]?
     private var cancellable: AnyCancellable?
@@ -22,13 +29,15 @@ class ViewController: UIViewController {
         
         // MARK: We set an AnyCancellable property to the result of the call to getMoviesReactively() so it will deallocate when the ViewController is deallocated
         // MARK: We then recieve a movieResponse value, and we set what we need from the data to the movies property on our VC.
+        getMovieData()
+    }
+
+    private func getMovieData() {
         cancellable = presenter.getMoviesReactively().sink(receiveValue: { [weak self] movieResponse in
             self?.movies = movieResponse.docs
             print(self?.movies?.count)
         })
-        
     }
-
     
 
 }

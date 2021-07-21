@@ -34,7 +34,7 @@ class ViewPresenter {
     
     // MARK: We remove the closure and refactor it to the AnyPublisher return type with the concrete Response type we are hoping to decode our data to
     // MARK: We need to Error handle in this layer because AnyPublisher with a Never property will not produce an error
-    // MARK: Just is used to immediately complete with a supplied value, in this case it's a MovieResponse
+    // MARK: Just() is used to immediately complete with a supplied value, in this case it's an empty init of MovieResponse
     // MARK: .eraseToAnyPublisher is again called in order for the function to conform to it's original return type
     func getMoviesReactively() -> AnyPublisher<MovieResponse, Never> {
         return NetworkService.requestReactively(endpoint: MovieEndpoint.getMovies)

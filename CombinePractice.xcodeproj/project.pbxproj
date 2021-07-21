@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1F1DFBB226A45ACB00803016 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DFBB126A45ACB00803016 /* AppDelegate.swift */; };
-		1F1DFBB426A45ACB00803016 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DFBB326A45ACB00803016 /* SceneDelegate.swift */; };
 		1F1DFBB626A45ACB00803016 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DFBB526A45ACB00803016 /* ViewController.swift */; };
 		1F1DFBD026A45E3700803016 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DFBCF26A45E3700803016 /* Endpoint.swift */; };
 		1F1DFBD426A4613000803016 /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DFBD326A4613000803016 /* MovieResponse.swift */; };
@@ -16,12 +15,16 @@
 		1F1DFBD926A4655400803016 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DFBD826A4655400803016 /* NetworkService.swift */; };
 		1F1DFBDB26A4757F00803016 /* ViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DFBDA26A4757F00803016 /* ViewPresenter.swift */; };
 		1F7A7EB226A4B68E00CA8C39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1DFBB726A45ACB00803016 /* Main.storyboard */; };
+		1F7A7EB626A6D4E500CA8C39 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A7EB526A6D4E500CA8C39 /* Coordinator.swift */; };
+		1F7A7EB826A6D55000CA8C39 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A7EB726A6D55000CA8C39 /* MainCoordinator.swift */; };
+		1F7A7EBB26A6D5FC00CA8C39 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A7EBA26A6D5FC00CA8C39 /* Storyboarded.swift */; };
+		1F7A7EC226A8266900CA8C39 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A7EC126A8266900CA8C39 /* BookViewController.swift */; };
+		1F7A7EC426A826E500CA8C39 /* BookCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A7EC326A826E500CA8C39 /* BookCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F1DFBAE26A45ACB00803016 /* CombinePractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombinePractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1DFBB126A45ACB00803016 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1F1DFBB326A45ACB00803016 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1F1DFBB526A45ACB00803016 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F1DFBB826A45ACB00803016 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F1DFBBA26A45ACC00803016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +35,11 @@
 		1F1DFBD526A462B100803016 /* MovieEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEndpoint.swift; sourceTree = "<group>"; };
 		1F1DFBD826A4655400803016 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		1F1DFBDA26A4757F00803016 /* ViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
+		1F7A7EB526A6D4E500CA8C39 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		1F7A7EB726A6D55000CA8C39 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		1F7A7EBA26A6D5FC00CA8C39 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		1F7A7EC126A8266900CA8C39 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		1F7A7EC326A826E500CA8C39 /* BookCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +72,11 @@
 		1F1DFBB026A45ACB00803016 /* CombinePractice */ = {
 			isa = PBXGroup;
 			children = (
-				1F1DFBC526A45BB200803016 /* Models */,
-				1F1DFBC826A45BC600803016 /* Network */,
 				1F1DFBCB26A45C0400803016 /* App Resources */,
-				1F1DFBC626A45BB800803016 /* Views */,
+				1F1DFBC526A45BB200803016 /* Models */,
+				1F7A7EB326A6D4CB00CA8C39 /* Navigation */,
+				1F1DFBC826A45BC600803016 /* Network */,
+				1F1DFBC626A45BB800803016 /* ViewControllers */,
 			);
 			path = CombinePractice;
 			sourceTree = "<group>";
@@ -80,13 +89,18 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		1F1DFBC626A45BB800803016 /* Views */ = {
+		1F1DFBC626A45BB800803016 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1F1DFBCA26A45BF400803016 /* SplashVC */,
-				1F1DFBC926A45BDC00803016 /* MainVC */,
+				1F7A7EBD26A6EBB800CA8C39 /* Book */,
+				1F7A7EBF26A6EBD200CA8C39 /* Chapter */,
+				1F7A7EBC26A6EB8900CA8C39 /* Character */,
+				1F1DFBC926A45BDC00803016 /* Main */,
+				1F7A7EC026A6EC1D00CA8C39 /* Movie */,
+				1F7A7EBE26A6EBBD00CA8C39 /* Quote */,
+				1F1DFBCA26A45BF400803016 /* Splash */,
 			);
-			path = Views;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		1F1DFBC826A45BC600803016 /* Network */ = {
@@ -99,22 +113,22 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		1F1DFBC926A45BDC00803016 /* MainVC */ = {
+		1F1DFBC926A45BDC00803016 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				1F1DFBB726A45ACB00803016 /* Main.storyboard */,
 				1F1DFBB526A45ACB00803016 /* ViewController.swift */,
 				1F1DFBDA26A4757F00803016 /* ViewPresenter.swift */,
 			);
-			path = MainVC;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		1F1DFBCA26A45BF400803016 /* SplashVC */ = {
+		1F1DFBCA26A45BF400803016 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
 				1F1DFBBC26A45ACC00803016 /* LaunchScreen.storyboard */,
 			);
-			path = SplashVC;
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		1F1DFBCB26A45C0400803016 /* App Resources */ = {
@@ -139,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				1F1DFBB126A45ACB00803016 /* AppDelegate.swift */,
-				1F1DFBB326A45ACB00803016 /* SceneDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -166,6 +179,69 @@
 				1F1DFBD826A4655400803016 /* NetworkService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		1F7A7EB326A6D4CB00CA8C39 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				1F7A7EB426A6D4D300CA8C39 /* Coordinator */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		1F7A7EB426A6D4D300CA8C39 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1F7A7EB726A6D55000CA8C39 /* MainCoordinator.swift */,
+				1F7A7EC326A826E500CA8C39 /* BookCoordinator.swift */,
+				1F7A7EB926A6D5ED00CA8C39 /* Protocols */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1F7A7EB926A6D5ED00CA8C39 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1F7A7EB526A6D4E500CA8C39 /* Coordinator.swift */,
+				1F7A7EBA26A6D5FC00CA8C39 /* Storyboarded.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1F7A7EBC26A6EB8900CA8C39 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		1F7A7EBD26A6EBB800CA8C39 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				1F7A7EC126A8266900CA8C39 /* BookViewController.swift */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
+		1F7A7EBE26A6EBBD00CA8C39 /* Quote */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Quote;
+			sourceTree = "<group>";
+		};
+		1F7A7EBF26A6EBD200CA8C39 /* Chapter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chapter;
+			sourceTree = "<group>";
+		};
+		1F7A7EC026A6EC1D00CA8C39 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Movie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,11 +315,15 @@
 				1F1DFBB626A45ACB00803016 /* ViewController.swift in Sources */,
 				1F1DFBDB26A4757F00803016 /* ViewPresenter.swift in Sources */,
 				1F1DFBB226A45ACB00803016 /* AppDelegate.swift in Sources */,
+				1F7A7EB826A6D55000CA8C39 /* MainCoordinator.swift in Sources */,
 				1F1DFBD026A45E3700803016 /* Endpoint.swift in Sources */,
-				1F1DFBB426A45ACB00803016 /* SceneDelegate.swift in Sources */,
 				1F1DFBD426A4613000803016 /* MovieResponse.swift in Sources */,
+				1F7A7EBB26A6D5FC00CA8C39 /* Storyboarded.swift in Sources */,
 				1F1DFBD626A462B100803016 /* MovieEndpoint.swift in Sources */,
+				1F7A7EC426A826E500CA8C39 /* BookCoordinator.swift in Sources */,
+				1F7A7EC226A8266900CA8C39 /* BookViewController.swift in Sources */,
 				1F1DFBD926A4655400803016 /* NetworkService.swift in Sources */,
+				1F7A7EB626A6D4E500CA8C39 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
