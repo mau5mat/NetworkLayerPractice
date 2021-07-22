@@ -12,6 +12,7 @@ class BookViewController: UIViewController, Storyboarded {
     
   
     weak var coordinator: BookCoordinator?
+    
     private let presenter = BookPresenter()
     private var books: [Book]?
     private var cancellable: AnyCancellable?

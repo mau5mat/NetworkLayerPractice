@@ -12,6 +12,7 @@ class CharacterViewController: UIViewController, Storyboarded {
     
   
     weak var coordinator: CharacterCoordinator?
+    
     private let presenter = CharacterPresenter()
     private var characters: [Character]?
     private var fellowshipCharacter: Character?

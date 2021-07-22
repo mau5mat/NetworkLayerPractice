@@ -12,6 +12,7 @@ class MovieViewController: UIViewController, Storyboarded {
     
 
     weak var coordinator: MovieCoordinator?
+    
     private let presenter = MoviePresenter()
     private var movies: [Movie]?
     private var cancellable: AnyCancellable?
