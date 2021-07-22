@@ -8,33 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Book View Controller-->
-        <scene sceneID="2M0-dy-huE">
-            <objects>
-                <viewController storyboardIdentifier="BookViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z3K-iy-olL" customClass="BookViewController" customModule="CombinePractice" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="H92-Jo-m22">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lv2-vH-sbg">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="SXv-Zm-UqT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Lv2-vH-sbg" firstAttribute="leading" secondItem="SXv-Zm-UqT" secondAttribute="leading" id="3TU-Ao-mey"/>
-                            <constraint firstItem="SXv-Zm-UqT" firstAttribute="bottom" secondItem="Lv2-vH-sbg" secondAttribute="bottom" id="Am1-8M-IKr"/>
-                            <constraint firstItem="Lv2-vH-sbg" firstAttribute="top" secondItem="SXv-Zm-UqT" secondAttribute="top" id="l5w-d2-lS7"/>
-                            <constraint firstItem="SXv-Zm-UqT" firstAttribute="trailing" secondItem="Lv2-vH-sbg" secondAttribute="trailing" id="l9f-Wo-DwL"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IBH-py-fjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1420" y="85"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -46,22 +19,47 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xjQ-nJ-sQm">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEk-oZ-BDd">
-                                        <rect key="frame" x="8" y="16" width="100" height="100"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wXL-2X-yvD">
+                                        <rect key="frame" x="24" y="309" width="366" height="200"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sn-bI-GrC" userLabel="Movie">
+                                                <rect key="frame" x="0.0" y="0.0" width="366" height="40"/>
+                                                <state key="normal" title="Movie"/>
+                                                <connections>
+                                                    <action selector="didTapMovieButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wnh-k6-0x1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ch9-dL-H9s" userLabel="Book">
+                                                <rect key="frame" x="0.0" y="40" width="366" height="40"/>
+                                                <state key="normal" title="Book"/>
+                                                <connections>
+                                                    <action selector="didTapBookButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vAG-AY-K38"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsQ-3W-HQq" userLabel="Chapter">
+                                                <rect key="frame" x="0.0" y="80" width="366" height="40"/>
+                                                <state key="normal" title="Chapter"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnF-Zv-NZM" userLabel="Character">
+                                                <rect key="frame" x="0.0" y="120" width="366" height="40"/>
+                                                <state key="normal" title="Character"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lM-hb-Pqx" userLabel="Quote">
+                                                <rect key="frame" x="0.0" y="160" width="366" height="40"/>
+                                                <state key="normal" title="Quote"/>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="lnA-d7-drk"/>
-                                            <constraint firstAttribute="width" constant="100" id="pvS-GV-EKL"/>
+                                            <constraint firstAttribute="height" constant="200" id="dma-an-qVA"/>
                                         </constraints>
-                                        <state key="normal" title="Books"/>
-                                        <connections>
-                                            <action selector="didTapBookButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B8V-7Q-l29"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="nEk-oZ-BDd" firstAttribute="top" secondItem="xjQ-nJ-sQm" secondAttribute="top" constant="16" id="ZlU-na-2By"/>
-                                    <constraint firstItem="nEk-oZ-BDd" firstAttribute="leading" secondItem="xjQ-nJ-sQm" secondAttribute="leading" constant="8" id="qvx-y6-n9Z"/>
+                                    <constraint firstItem="wXL-2X-yvD" firstAttribute="leading" secondItem="xjQ-nJ-sQm" secondAttribute="leading" constant="24" id="0LD-yw-uUP"/>
+                                    <constraint firstItem="wXL-2X-yvD" firstAttribute="centerX" secondItem="xjQ-nJ-sQm" secondAttribute="centerX" id="805-8N-Rd5"/>
+                                    <constraint firstAttribute="trailing" secondItem="wXL-2X-yvD" secondAttribute="trailing" constant="24" id="ONe-iX-jQU"/>
+                                    <constraint firstItem="wXL-2X-yvD" firstAttribute="centerY" secondItem="xjQ-nJ-sQm" secondAttribute="centerY" id="Xky-Dx-Zb9"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -83,12 +81,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

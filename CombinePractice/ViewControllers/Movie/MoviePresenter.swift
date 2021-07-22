@@ -1,8 +1,8 @@
 //
-//  ViewPresenter.swift
+//  MoviePresenter.swift
 //  CombinePractice
 //
-//  Created by Matthew Roberts on 18/07/2021.
+//  Created by Matthew Roberts on 22/07/2021.
 //
 
 import Foundation
@@ -12,7 +12,7 @@ protocol MovieViewDelegate: AnyObject {
     func didRecieve(movieDocs: [Doc])
 }
 
-class ViewPresenter {
+class MoviePresenter {
     
     weak var delegate: MovieViewDelegate?
     

@@ -6,48 +6,25 @@
 //
 
 import UIKit
-import Combine
 
 class ViewController: UIViewController, Storyboarded {
-    
-    @IBAction func didTapBookButton(_ sender: UIButton) {
-        // Use coordinator to navigate to BookViewController onTap
-        self.mainCoordinator?.goToBookVC()
-        
-    }
 
-    weak var mainCoordinator: MainCoordinator?
-    private let presenter = ViewPresenter()
-    private var movies: [Doc]?
-    private var cancellable: AnyCancellable?
+    weak var coordinator: MainCoordinator?
         
     override func viewDidLoad() {
         super.viewDidLoad()
         print("view loaded")
-        presenter.setView(delegate: self)
-//        presenter.getMovies()
-        
-        // MARK: We set an AnyCancellable property to the result of the call to getMoviesReactively() so it will deallocate when the ViewController is deallocated
-        // MARK: We then recieve a movieResponse value, and we set what we need from the data to the movies property on our VC.
-        getMovieData()
     }
-
-    private func getMovieData() {
-        cancellable = presenter.getMoviesReactively().sink(receiveValue: { [weak self] movieResponse in
-            self?.movies = movieResponse.docs
-            print(self?.movies?.count)
-        })
-    }
-    
-
 }
 
-extension ViewController: MovieViewDelegate {
-    func didRecieve(movieDocs: [Doc]) {
-        self.movies = movieDocs
-        print(movies?.count ?? 0)
+extension ViewController {
+    
+    @IBAction func didTapBookButton(_ sender: UIButton) {
+        self.coordinator?.goToBookVC()
     }
     
-    
+    @IBAction func didTapMovieButton(_ sender: UIButton) {
+        self.coordinator?.goToMovieVC()
+    }
 }
 

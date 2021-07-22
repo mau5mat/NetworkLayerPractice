@@ -5,7 +5,6 @@
 //  Created by Matthew Roberts on 20/07/2021.
 //
 
-import Foundation
 import UIKit
 
 class MainCoordinator: Coordinator {
@@ -19,7 +18,7 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = ViewController.instanciate()
+        let vc = ViewController.instanciate(storyboard: "Main")
         vc.mainCoordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
@@ -39,6 +38,13 @@ extension MainCoordinator {
     
     func goToBookVC() {
         let child = BookCoordinator(navigationController: navigationController)
+        childCoordinators.append(child)
+        child.parentCoordinator = self
+        child.start()
+    }
+    
+    func goToMovieVC() {
+        let child = MovieCoordinator(navigationController: navigationController)
         childCoordinators.append(child)
         child.parentCoordinator = self
         child.start()
