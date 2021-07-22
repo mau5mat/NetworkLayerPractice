@@ -19,7 +19,7 @@ class MainCoordinator: Coordinator {
     
     func start() {
         let vc = ViewController.instanciate(storyboard: "Main")
-        vc.mainCoordinator = self
+        vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
     
