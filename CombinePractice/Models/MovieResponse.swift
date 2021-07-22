@@ -30,7 +30,7 @@ struct MovieResponse: Codable {
     }
 }
 
-// MARK: - Doc
+// MARK: - Movie
 struct Movie: Codable {
     var id, name: String
     var runtimeInMinutes, budgetInMillions: Int

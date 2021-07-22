@@ -33,7 +33,7 @@ enum BookEndpoint: Endpoint {
         case .getBook(let id):
             return "/v2/book/\(id)/"
         case .getBookChapters(let id):
-            return "/v2/movie/\(id)/chapters"
+            return "/v2/book/\(id)/chapters"
         }
     }
     
@@ -54,7 +54,7 @@ enum BookEndpoint: Endpoint {
     var bearerToken: String? {
         switch self {
         default:
-            return "Bearer lFtCBBZ6VDm31KnMULjQ"
+            return ""
         }
     }
     

@@ -43,6 +43,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnF-Zv-NZM" userLabel="Character">
                                                 <rect key="frame" x="0.0" y="120" width="366" height="40"/>
                                                 <state key="normal" title="Character"/>
+                                                <connections>
+                                                    <action selector="didTapCharacterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gfV-uF-QQU"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lM-hb-Pqx" userLabel="Quote">
                                                 <rect key="frame" x="0.0" y="160" width="366" height="40"/>

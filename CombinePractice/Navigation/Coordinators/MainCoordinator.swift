@@ -49,4 +49,11 @@ extension MainCoordinator {
         child.parentCoordinator = self
         child.start()
     }
+    
+    func goToCharacterVC() {
+        let child = CharacterCoordinator(navigationController: navigationController)
+        childCoordinators.append(child)
+        child.parentCoordinator = self
+        child.start()
+    }
 }

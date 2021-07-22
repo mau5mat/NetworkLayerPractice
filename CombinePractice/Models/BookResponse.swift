@@ -29,7 +29,7 @@ struct BookResponse: Codable {
     }
 }
 
-// MARK: - Doc
+// MARK: - Book
 struct Book: Codable {
     var id, name: String
 
