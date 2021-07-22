@@ -6,21 +6,33 @@
 //
 
 import UIKit
+import Combine
 
 class BookViewController: UIViewController, Storyboarded {
     
   
     weak var coordinator: BookCoordinator?
+    private let presenter = BookPresenter()
+    private var books: [Book]?
+    private var cancellable: AnyCancellable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("BookViewController didLoad")
+        getBookData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         coordinator?.didFinish()
-        
+    }
+    
+    private func getBookData() {
+        cancellable = presenter.getBooksReactively()
+            .sink(receiveValue: { [weak self] response in
+                self?.books = response.books
+                
+                print(self?.books?.count)
+            })
     }
 }

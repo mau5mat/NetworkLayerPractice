@@ -6,7 +6,13 @@
 //
 
 import Foundation
+import Combine
 
 class BookPresenter {
-    
+    func getBooksReactively() -> AnyPublisher<BookResponse, Never> {
+        return NetworkService.requestReactively(endpoint: BookEndpoint.getBooks)
+            .catch { error in
+                return Just(BookResponse())
+            }.eraseToAnyPublisher()
+    }
 }

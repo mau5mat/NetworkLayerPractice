@@ -24,7 +24,7 @@ struct NetworkService {
     
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = endpoint.methodType
-        urlRequest.addValue(endpoint.bearerToken, forHTTPHeaderField: "Authorization")
+        urlRequest.addValue(endpoint.bearerToken ?? "", forHTTPHeaderField: "Authorization")
 
         let session = URLSession(configuration: .default)
         let dataTask = session.dataTask(with: urlRequest) { data, response, error in
@@ -64,7 +64,7 @@ struct NetworkService {
     
         var urlRequest = URLRequest(url: url!)
         urlRequest.httpMethod = endpoint.methodType
-        urlRequest.addValue(endpoint.bearerToken, forHTTPHeaderField: "Authorization")
+        urlRequest.addValue(endpoint.bearerToken ?? "", forHTTPHeaderField: "Authorization")
         
         let session = URLSession(configuration: .default)
         

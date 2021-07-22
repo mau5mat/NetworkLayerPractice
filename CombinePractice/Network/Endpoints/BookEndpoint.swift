@@ -1,16 +1,16 @@
 //
-//  MovieEndpoint.swift
+//  BookEndpoint.swift
 //  CombinePractice
 //
-//  Created by Matthew Roberts on 18/07/2021.
+//  Created by Matthew Roberts on 22/07/2021.
 //
 
 import Foundation
 
-enum MovieEndpoint: Endpoint {
-    case getMovies
-    case getMovie(id: String)
-    case getMovieQuotes(id: String)
+enum BookEndpoint: Endpoint {
+    case getBooks
+    case getBook(id: String)
+    case getBookChapters(id: String)
     
     var scheme: String {
         switch self {
@@ -28,12 +28,12 @@ enum MovieEndpoint: Endpoint {
     
     var path: String {
         switch self {
-        case .getMovies:
-            return "/v2/movie/"
-        case .getMovie(let id):
-            return "/v2/movie/\(id)/"
-        case .getMovieQuotes(let id):
-            return "/v2/movie/\(id)/quote"
+        case .getBooks:
+            return "/v2/book/"
+        case .getBook(let id):
+            return "/v2/book/\(id)/"
+        case .getBookChapters(let id):
+            return "/v2/movie/\(id)/chapters"
         }
     }
     
@@ -59,3 +59,4 @@ enum MovieEndpoint: Endpoint {
     }
     
 }
+

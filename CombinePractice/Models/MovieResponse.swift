@@ -9,12 +9,19 @@ import Foundation
 
 // MARK: - MovieResponse
 struct MovieResponse: Codable {
-    var docs: [Doc]?
+    var movies: [Movie]?
     var total, limit, offset, page: Int?
     var pages: Int?
     
-    init(docs: [Doc]? = nil, total: Int? = nil, limit: Int? = nil, offset: Int? = nil, page: Int? = nil, pages: Int? = nil) {
-        self.docs = docs
+    enum CodingKeys: String, CodingKey {
+        case movies = "docs"
+        case total, limit, offset, page
+        case pages
+        
+    }
+    
+    init(movies: [Movie]? = nil, total: Int? = nil, limit: Int? = nil, offset: Int? = nil, page: Int? = nil, pages: Int? = nil) {
+        self.movies = movies
         self.total = total
         self.limit = limit
         self.offset = offset
@@ -24,7 +31,7 @@ struct MovieResponse: Codable {
 }
 
 // MARK: - Doc
-struct Doc: Codable {
+struct Movie: Codable {
     var id, name: String
     var runtimeInMinutes, budgetInMillions: Int
     var boxOfficeRevenueInMillions: Double

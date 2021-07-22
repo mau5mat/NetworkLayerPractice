@@ -13,7 +13,7 @@ class MovieViewController: UIViewController, Storyboarded {
 
     weak var coordinator: MovieCoordinator?
     private let presenter = MoviePresenter()
-    private var movies: [Doc]?
+    private var movies: [Movie]?
     private var cancellable: AnyCancellable?
         
     override func viewDidLoad() {
@@ -34,8 +34,9 @@ class MovieViewController: UIViewController, Storyboarded {
     }
 
     private func getMovieData() {
-        cancellable = presenter.getMoviesReactively().sink(receiveValue: { [weak self] movieResponse in
-            self?.movies = movieResponse.docs
+        cancellable = presenter.getMoviesReactively().sink(receiveValue: { [weak self] response in
+            self?.movies = response.movies
+            
             print(self?.movies?.count)
         })
     }
@@ -44,9 +45,9 @@ class MovieViewController: UIViewController, Storyboarded {
 }
 
 extension MovieViewController: MovieViewDelegate {
-    func didRecieve(movieDocs: [Doc]) {
-        self.movies = movieDocs
-        print(movies?.count ?? 0)
+    func didRecieve(movies: [Movie]) {
+        self.movies = movies
+        print(self.movies?.count ?? 0)
     }
     
     

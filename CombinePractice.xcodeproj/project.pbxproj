@@ -25,6 +25,8 @@
 		1F7A7ECC26A97F5100CA8C39 /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7A7ECB26A97F5100CA8C39 /* Movie.storyboard */; };
 		1F7A7ECE26A983ED00CA8C39 /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7A7ECD26A983ED00CA8C39 /* Book.storyboard */; };
 		1F7A7ED026A9841900CA8C39 /* BookPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A7ECF26A9841900CA8C39 /* BookPresenter.swift */; };
+		1F7A7ED226A985E900CA8C39 /* BookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A7ED126A985E900CA8C39 /* BookResponse.swift */; };
+		1F7A7ED426A9898900CA8C39 /* BookEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A7ED326A9898900CA8C39 /* BookEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		1F7A7ECB26A97F5100CA8C39 /* Movie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movie.storyboard; sourceTree = "<group>"; };
 		1F7A7ECD26A983ED00CA8C39 /* Book.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
 		1F7A7ECF26A9841900CA8C39 /* BookPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPresenter.swift; sourceTree = "<group>"; };
+		1F7A7ED126A985E900CA8C39 /* BookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookResponse.swift; sourceTree = "<group>"; };
+		1F7A7ED326A9898900CA8C39 /* BookEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				1F1DFBD326A4613000803016 /* MovieResponse.swift */,
+				1F7A7ED126A985E900CA8C39 /* BookResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				1F1DFBD526A462B100803016 /* MovieEndpoint.swift */,
+				1F7A7ED326A9898900CA8C39 /* BookEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 				1F7A7EB826A6D55000CA8C39 /* MainCoordinator.swift in Sources */,
 				1F1DFBD026A45E3700803016 /* Endpoint.swift in Sources */,
 				1F1DFBD426A4613000803016 /* MovieResponse.swift in Sources */,
+				1F7A7ED226A985E900CA8C39 /* BookResponse.swift in Sources */,
 				1F7A7EBB26A6D5FC00CA8C39 /* Storyboarded.swift in Sources */,
 				1F1DFBD626A462B100803016 /* MovieEndpoint.swift in Sources */,
 				1F7A7EC426A826E500CA8C39 /* BookCoordinator.swift in Sources */,
@@ -344,6 +351,7 @@
 				1F1DFBD926A4655400803016 /* NetworkService.swift in Sources */,
 				1F7A7ECA26A8E29D00CA8C39 /* MoviePresenter.swift in Sources */,
 				1F7A7EB626A6D4E500CA8C39 /* Coordinator.swift in Sources */,
+				1F7A7ED426A9898900CA8C39 /* BookEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

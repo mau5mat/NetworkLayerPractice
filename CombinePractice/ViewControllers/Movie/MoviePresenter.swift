@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol MovieViewDelegate: AnyObject {
-    func didRecieve(movieDocs: [Doc])
+    func didRecieve(movies: [Movie])
 }
 
 class MoviePresenter {
@@ -24,8 +24,8 @@ class MoviePresenter {
         NetworkService.request(endpoint: MovieEndpoint.getMovies) { (result: Result<MovieResponse, Error>) in
             switch result {
             case .success(let response):
-                guard let movies = response.docs else { return }
-                self.delegate?.didRecieve(movieDocs: movies)
+                guard let movies = response.movies else { return }
+                self.delegate?.didRecieve(movies: movies)
             case .failure(let error):
                 print(error)
             }

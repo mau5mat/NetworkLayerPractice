@@ -25,6 +25,6 @@ protocol Endpoint {
     var methodType: String { get }
     
     // For Authorization
-    var bearerToken: String { get }
+    var bearerToken: String? { get }
     
 }
