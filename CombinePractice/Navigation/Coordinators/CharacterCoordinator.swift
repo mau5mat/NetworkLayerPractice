@@ -18,7 +18,7 @@ class CharacterCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = CharacterViewController.instanciate(storyboard: "Character")
+        let vc = CharacterViewController.instantiate(storyboard: "Character")
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }

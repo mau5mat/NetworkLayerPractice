@@ -48,17 +48,17 @@ enum CharacterEndpoint: Endpoint {
     case getCharacter(id: String)
     case getCharacterQuotes(id: String)
     
-    var scheme: String {
+    var scheme: URLScheme {
         switch self {
         default:
-           return "https"
+            return .https
         }
     }
     
-    var baseURL: String {
+    var baseURL: BaseURL {
         switch self {
         default:
-            return "the-one-api.dev"
+            return .url
         }
     }
     
@@ -80,17 +80,17 @@ enum CharacterEndpoint: Endpoint {
         }
     }
     
-    var methodType: String {
+    var methodType: HTTPMethodType {
         switch self {
         default:
-            return "GET"
+            return .GET
         }
     }
     
     var bearerToken: String? {
         switch self {
         default:
-            return "Bearer lFtCBBZ6VDm31KnMULjQ"
+            return BearerToken.token
         }
     }
     

@@ -13,7 +13,7 @@ class BookViewController: UIViewController, Storyboarded {
   
     weak var coordinator: BookCoordinator?
     
-    private let presenter = BookPresenter()
+//    private let presenter = BookPresenter()
     private var books: [Book]?
     private var cancellable: AnyCancellable?
     
@@ -29,11 +29,11 @@ class BookViewController: UIViewController, Storyboarded {
     }
     
     private func getBookData() {
-        cancellable = presenter.getBooksReactively()
-            .sink(receiveValue: { [weak self] response in
-                self?.books = response.books
-                
-                print(self?.books?.count)
-            })
+//        cancellable = presenter.getBooksReactively()
+//            .sink(receiveValue: { [weak self] response in
+//                self?.books = response.books
+//                
+//                print(self?.books?.count)
+//            })
     }
 }

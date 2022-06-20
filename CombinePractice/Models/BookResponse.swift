@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - BookResponse
 struct BookResponse: Codable {
     var books: [Book]?
     var total, limit, offset, page: Int?

@@ -20,15 +20,15 @@ class ViewController: UIViewController, Storyboarded {
 extension ViewController {
     
     @IBAction private func didTapBookButton(_ sender: UIButton) {
-        self.coordinator?.goToBookVC()
+        self.coordinator?.pushToBookVC()
     }
     
     @IBAction private func didTapMovieButton(_ sender: UIButton) {
-        self.coordinator?.goToMovieVC()
+        self.coordinator?.pushToMovieVC()
     }
     
     @IBAction private func didTapCharacterButton(_ sender: UIButton) {
-        self.coordinator?.goToCharacterVC()
+        self.coordinator?.pushToCharacterVC()
     }
 }
 

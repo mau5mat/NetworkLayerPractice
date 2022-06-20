@@ -12,17 +12,17 @@ enum BookEndpoint: Endpoint {
     case getBook(id: String)
     case getBookChapters(id: String)
     
-    var scheme: String {
+    var scheme: URLScheme {
         switch self {
         default:
-           return "https"
+            return .https
         }
     }
     
-    var baseURL: String {
+    var baseURL: BaseURL {
         switch self {
         default:
-            return "the-one-api.dev"
+            return .url
         }
     }
     
@@ -44,17 +44,17 @@ enum BookEndpoint: Endpoint {
         }
     }
     
-    var methodType: String {
+    var methodType: HTTPMethodType {
         switch self {
         default:
-            return "GET"
+            return .GET
         }
     }
     
     var bearerToken: String? {
         switch self {
         default:
-            return ""
+            return nil
         }
     }
     

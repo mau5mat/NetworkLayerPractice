@@ -8,9 +8,7 @@
 import UIKit
 
 class MainCoordinator: Coordinator {
-    
     var childCoordinators = [Coordinator]()
-    
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -18,7 +16,7 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = ViewController.instanciate(storyboard: "Main")
+        let vc = ViewController.instantiate(storyboard: "Main")
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
@@ -36,21 +34,21 @@ class MainCoordinator: Coordinator {
 
 extension MainCoordinator {
     
-    func goToBookVC() {
+    func pushToBookVC() {
         let child = BookCoordinator(navigationController: navigationController)
         childCoordinators.append(child)
         child.parentCoordinator = self
         child.start()
     }
     
-    func goToMovieVC() {
+    func pushToMovieVC() {
         let child = MovieCoordinator(navigationController: navigationController)
         childCoordinators.append(child)
         child.parentCoordinator = self
         child.start()
     }
     
-    func goToCharacterVC() {
+    func pushToCharacterVC() {
         let child = CharacterCoordinator(navigationController: navigationController)
         childCoordinators.append(child)
         child.parentCoordinator = self

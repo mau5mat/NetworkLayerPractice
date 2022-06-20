@@ -18,7 +18,7 @@ class BookCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = BookViewController.instanciate(storyboard: "Book")
+        let vc = BookViewController.instantiate(storyboard: "Book")
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }

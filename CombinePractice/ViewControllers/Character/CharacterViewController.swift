@@ -13,7 +13,7 @@ class CharacterViewController: UIViewController, Storyboarded {
   
     weak var coordinator: CharacterCoordinator?
     
-    private let presenter = CharacterPresenter()
+//    private let presenter = CharacterPresenter()
     private var characters: [Character]?
     private var fellowshipCharacter: Character?
     private var cancellable: AnyCancellable?
@@ -30,11 +30,11 @@ class CharacterViewController: UIViewController, Storyboarded {
     }
     
     private func getCharacterData(withCharacter character: FellowshipCharacter) {
-        cancellable = presenter.getFellowshipCharacterReactively(id: character.id)
-            .sink(receiveValue: { [weak self] response in
-                self?.fellowshipCharacter = response.characters?.first
-                
-                print(self?.fellowshipCharacter)
-            })
+//        cancellable = presenter.getFellowshipCharacterReactively(id: character.id)
+//            .sink(receiveValue: { [weak self] response in
+//                self?.fellowshipCharacter = response.characters?.first
+//                
+//                print(self?.fellowshipCharacter)
+//            })
     }
 }

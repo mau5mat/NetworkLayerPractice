@@ -10,47 +10,67 @@ import Combine
 
 class MovieViewController: UIViewController, Storyboarded {
     
-
-    weak var coordinator: MovieCoordinator?
+    var viewModel: MovieViewModel
     
-    private let presenter = MoviePresenter()
-    private var movies: [Movie]?
-    private var cancellable: AnyCancellable?
-        
+    @IBOutlet weak private var tableView: UITableView!
+    
+    required init?(coder: NSCoder) {
+        viewModel = MovieViewModel()
+        super.init(coder: coder)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchMovies()
+        print(viewModel.getMoviesCount())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("view loaded")
-        presenter.setView(delegate: self)
-//        presenter.getMovies()
-        
-        // MARK: We set an AnyCancellable property to the result of the call to getMoviesReactively() so it will deallocate when the ViewController is deallocated
-        // MARK: We then recieve a movieResponse value, and we set what we need from the data to the movies property on our VC.
-        getMovieData()
+        initTableView()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
-        coordinator?.didFinish()
-    }
-
-    private func getMovieData() {
-        cancellable = presenter.getMoviesReactively().sink(receiveValue: { [weak self] response in
-            self?.movies = response.movies
-            
-            print(self?.movies?.count)
-        })
+        viewModel.delegate?.moveToMovieDetailView()
     }
     
-
+    private func fetchMovies() {
+        Task {
+            await viewModel.fetchMovies()
+            tableView.reloadData()
+        }
+    }
+    
+    private func initTableView() {
+        tableView.register(MovieCell.getNib(), forCellReuseIdentifier: MovieCell.getReuseIdentifier())
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.estimatedRowHeight = 150
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.backgroundColor = .purple
+    }
 }
 
-extension MovieViewController: MovieViewDelegate {
-    func didRecieve(movies: [Movie]) {
-        self.movies = movies
-        print(self.movies?.count ?? 0)
+extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.getMoviesCount()
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.getReuseIdentifier(), for: indexPath) as! MovieCell
+        
+        let movie = viewModel.getMovies()[indexPath.row]
+        
+        cell.setupCell(with: movie)
+        cell.layoutIfNeeded()
+        
+        return cell
+    }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150.0
+    }
 }
 

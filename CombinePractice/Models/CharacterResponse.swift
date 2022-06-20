@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - CharacterResponse
 struct CharacterResponse: Codable {
     var characters: [Character]?
     var total, limit, offset, page: Int?

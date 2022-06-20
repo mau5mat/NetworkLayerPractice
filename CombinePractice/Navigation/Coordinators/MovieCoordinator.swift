@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol MovieCoordinatorDelegate {
+    func moveToMovieDetailView()
+}
+
 class MovieCoordinator: Coordinator {
     weak var parentCoordinator: MainCoordinator?
+
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
@@ -18,12 +23,18 @@ class MovieCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = MovieViewController.instanciate(storyboard: "Movie")
-        vc.coordinator = self
+        let vc = MovieViewController.instantiate(storyboard: "Movie")
+        vc.viewModel.delegate = self
         navigationController.pushViewController(vc, animated: false)
     }
     
     func didFinish() {
         parentCoordinator?.finish(with: self)
+    }
+}
+
+extension MovieCoordinator: MovieCoordinatorDelegate {
+    func moveToMovieDetailView() {
+        // Go to Detail View
     }
 }
